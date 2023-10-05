@@ -1,6 +1,10 @@
+# O(n)
 def join_array_remove_duplicate(arrayA, arrayB):
-    # your code here
-    return []
+    result = []
+    for item in arrayA + arrayB:
+        if item not in result:
+            result.append(item)
+    return result
 
 if __name__ == '__main__':
     # Test cases

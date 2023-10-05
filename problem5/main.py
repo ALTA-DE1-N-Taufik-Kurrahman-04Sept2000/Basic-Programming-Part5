@@ -1,5 +1,19 @@
+# O(n)
 def pair_sum(arr, target):
-    return []
+    left = 0  # Pointer kiri
+    right = len(arr) - 1  # Pointer kanan
+
+    while left < right:
+        current_sum = arr[left] + arr[right]
+        if current_sum == target:
+            return [left, right]
+        elif current_sum < target:
+            left += 1
+        else:
+            right -= 1
+
+    # Jika tidak ada pasangan yang ditemukan
+    return None
 
 if __name__ == '__main__':
     print(pair_sum([1, 2, 3, 4, 6], 6)) # [1, 3]
